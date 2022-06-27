@@ -8,3 +8,4 @@ Task 5 displays the first 10 lines of the file passwd
 Task 6 displays the third line of the file given
 Task 7 creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line
 Task 8 writes into the file ls_cwd_content the result of the command ls -la
+Task 9 duplicates the last line of the file iacta
