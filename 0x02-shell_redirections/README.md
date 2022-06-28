@@ -20,3 +20,5 @@ Task 17 Displays all the lines in the file /etc/passwd that do not contain the p
 Task 18 Displays all lines of the file /etc/ssh/sshd_config starting with a letter
 Task 19 Replace all characters A and c from input to Z and e respectively
 Task 20 removes all letters c and C from input
+Task 21 reverses the input
+Task 22 displays all users and their home directories, sorted by users
