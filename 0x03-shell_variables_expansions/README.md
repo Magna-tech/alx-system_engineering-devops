@@ -14,3 +14,4 @@ Task 11 converts a number from base 2 to base 10
 Task 12 prints all possible combinations of two letters, except oo
 Task 13 prints a number with two decimal places, followed by a new line
 Task 100 converts a number from base 10 to base 16
+Task 101 encodes and decodes text using the rot13 encryption. Assume ASCII
