@@ -11,3 +11,4 @@ Task 8 prints the result of the addition of 128 with the value stored in the env
 Task 9  prints the result of POWER divided by DIVIDE, followed by a new line
 Task 10 displays the result of BREATH to the power LOVE
 Task 11 converts a number from base 2 to base 10
+Task 12 prints all possible combinations of two letters, except oo
