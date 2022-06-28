@@ -6,3 +6,4 @@ Task 3 counts the number of directories in the PATH
 Task 4 lists environment variables
 Task 5 lists all local variables and environment variables, and functions
 Task 6 creates a new local variable
+Task 7 creates a new global variable
