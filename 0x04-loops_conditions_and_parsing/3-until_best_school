@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#script prints Best school 10 times using while loop
+#script prints Best school 10 times using until loop
 
 i=0
 limit=10
