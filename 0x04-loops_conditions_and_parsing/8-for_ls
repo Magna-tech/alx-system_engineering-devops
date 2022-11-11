@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 #print the content of the current working directory in a list format
 
-ls
+for i in *
+do
+	ls "$i"
+done
