@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#script prints Best school 10 times using while loop
+
+i=0
+limit=10
+
+until [ "$i" = "$limit" ]
+do
+	echo "Best School"
+
+	(( i++ ))
+done
