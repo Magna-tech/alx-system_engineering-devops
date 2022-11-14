@@ -4,14 +4,19 @@
 hour=0
 minute=1
 
-while [ "$hour" -lt 12 ]
+echo "Hour: " $hour
+while [ $minute ]
 do
-	echo "Hour: " $hour
-	(( hour++ ))
-	while [ "$minute" -lt 60 ]
-	do
-		echo "$minute"
-
-		(( minute++ ))
-	done
+	echo $minute
+	(( minute++ ))
+	if [ $minute -gt 59 ]
+	then
+		(( hour++ ))
+		echo "Hour: " $hour
+		(( minute = minute % 59 ))
+	fi
+	if [ $hour -gt 12 ]
+	then
+		break
+	fi
 done
