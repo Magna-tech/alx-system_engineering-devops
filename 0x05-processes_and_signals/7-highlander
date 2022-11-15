@@ -3,7 +3,7 @@
 
 i=0
 
-trap "I am invincible!!!" SIGTERM
+trap 'echo "I am invincible!!!"; ""' SIGTERM
 while [ "$i" -lt 1 ]
 do
 	echo "To infinity and beyond"
