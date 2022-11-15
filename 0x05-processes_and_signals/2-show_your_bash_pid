@@ -2,13 +2,4 @@
 #list bash pid
 # shellcheck disable=SC2009
 
-list=$(ps -xuf)
-name=bash
-
-for line in $list
-do
-	if [ $name ]
-	then
-		echo "$line"
-	fi
-done
+ps xuf -C bash | awk '/bash/ { print }'
