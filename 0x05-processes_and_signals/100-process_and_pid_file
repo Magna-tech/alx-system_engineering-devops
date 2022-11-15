@@ -7,7 +7,7 @@ ps -o pid,args -C bash | awk '/running_script/ { print $1 }' > /var/run/myscript
 
 trap 'echo "I hate the kill command"; ""' SIGTERM
 trap 'echo "Y U no love me?!"; ""' SIGINT
-trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT SIGTERM
+trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT
 while :
 do
 	echo "To infinity and beyond"
