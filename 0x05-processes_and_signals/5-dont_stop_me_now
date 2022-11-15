@@ -2,4 +2,4 @@
 #code to kill an infinite loop
 
 p=$(pidof 4-to_infinity_and_beyond)
-kill -SIGTERM "$p"
+kill -SIGTERM "${p}"
