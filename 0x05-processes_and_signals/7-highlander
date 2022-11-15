@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#infinite loop with a sleep 2 and rejects SIGTERM
+
+i=0
+
+trap "I am invincible!!!" SIGTERM
+while [ "$i" -lt 1 ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
