@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #code to kill an infinite loop
 
-p=$(pidof 4-to_infinity_and_beyond)
-kill -SIGTERM "${p}"
+pgrep -f "4-to_infinity_and_beyond" | xargs kill
