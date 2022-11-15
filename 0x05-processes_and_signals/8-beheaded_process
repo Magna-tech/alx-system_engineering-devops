@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#code to kill an infinite loop with a trap for sigterm
+
+pgrep -f "7-highlander" | xargs kill -9
