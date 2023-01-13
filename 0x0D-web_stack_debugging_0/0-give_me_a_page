@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+# fix server not printing
+service apache2 start
