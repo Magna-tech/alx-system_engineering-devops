@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2154 echo "proxy=$http_proxy"
 # this script configures a server web-02 to be identical to web-01
 
 apt-get -y update
