@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # this script connects to a server using private key given
-ssh -i ~/.ssh/school ubuntu@52.205.204.134
+ssh -i ~/.ssh/school ubuntu@3.85.16.1
