@@ -3,7 +3,7 @@
 
 for file in *
 do
-	if [ -f "$file" ] && [ "${file:0:1}" != "." ];
+	if [ -f "$file" ] && [ "${file:0:1}" != "." ]
        	then
         # Extract the part of the name after the first dash
         name=$(echo "$file" | cut -d'-' -f2-)
