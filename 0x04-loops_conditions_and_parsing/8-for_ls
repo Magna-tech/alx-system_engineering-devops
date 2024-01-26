@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 #print the content of the current working directory in a list format
 
-for i in *
+for file in *
 do
-	ls "$i"
+	if [ -f "$file" ] && [ "${file:0:1}" != "." ]
+       	then
+        # Extract the part of the name after the first dash
+        name=$(echo "$file" | cut -d'-' -f2-)
+        echo "$name"
+	fi
 done
