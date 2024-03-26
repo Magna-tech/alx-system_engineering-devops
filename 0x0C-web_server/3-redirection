@@ -14,6 +14,9 @@ echo "server{
 	}
 }" | tee /etc/nginx/sites-available/redirect_me > /dev/null
 
+#remove symbolic link if it exists
+rm -f /etc/nginx/sites-enabled/redirect_me
+
 #Enable symbolic link
 ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
 
