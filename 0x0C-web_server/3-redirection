@@ -10,7 +10,7 @@ echo "server{
 	server_name mymagna.tech;
 
 	location /redirect_me {
-		return 301 google.com;
+		return 301 http://google.com;
 	}
 }" | tee /etc/nginx/sites-available/redirect_me > /dev/null
 
