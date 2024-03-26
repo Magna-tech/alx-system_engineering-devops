@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This script installs nginx and configures it to listen on port 80
+apt-get update
+apt-get -y install nginx
+ufw allow "Nginx HTTP"
+echo "Hello World!" > /var/www/html/index.html
+# redirection
+echo "server{
+	listen 80;
+	server_name mymagna.tech;
+
+	location /redirect_me {
+		return 301 google.com;
+	}
+}" | tee /etc/nginx/sites-available/redirect_me > /dev/null
+
+#Enable symbolic link
+ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
+
+#check nginx config
+nginx -t
+
+systemctl reload nginx
