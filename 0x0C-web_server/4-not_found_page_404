@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script installs nginx and configures it to listen on port 80
+apt-get update
+apt-get -y install nginx
+ufw allow "Nginx HTTP"
+
+# create error file
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+# redirection
+sed -i '/server_name/a
+	error_page /404.html;
+	location = /404.html {
+		root /var/www/html;
+		internal;
+	}
+' /etc/nginx/sites-available/default
+
+#check nginx config
+nginx -t
+
+systemctl reload nginx
