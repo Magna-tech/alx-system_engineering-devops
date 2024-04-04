@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2154
 # this script configures a server web-02 to be identical to web-01
+# It also configures servers to return custom headers
 
 apt-get -y update
 apt-get -y install nginx
 ufw allow "Nginx HTTP"
-echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
-sed -i "/listen 80 default_server;/a add_header X-Served-By $hostname;" /etc/nginx/sites-available/default
-service nginx start
+
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+#sed -i "/listen 80 default_server;/a \ location \/redirect_me\/{ return 301 https://www.youtube.com permanent;" /etc/nginx/sites-available/default
+sed -i "/server_name/a \ add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default
+#test nginx config
+nginx -t
+
+#reload nginx
+systemctl reload nginx
