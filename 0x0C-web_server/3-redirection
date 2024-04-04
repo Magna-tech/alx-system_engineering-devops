@@ -6,7 +6,7 @@ ufw allow "Nginx HTTP"
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
 # redirection
-sed -i '55i\location \/redirect_me\/ { return 301 http://www.google.com;}
+sed -i '/server_name/a \	location \/redirect_me\/ { return 301 http://www.google.com;}
 ' /etc/nginx/sites-available/default
 
 #check nginx config
