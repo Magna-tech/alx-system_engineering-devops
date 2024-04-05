@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#This script displays subdomain properties
+
+get_dns_info() {
+    local sub_domain=$1
+    local domain=$2
+    local dns_info=$(dig +short $sub_domain.$domain)
+
+    if [ -z "$dns_info" ]; then
+        echo "The subdomain $sub_domain is not configured for $domain"
+    else
+        local record_type=$(dig +short $sub_domain.$domain | awk '{print $4}')
+        local destination=$(dig +short $sub_domain.$domain | awk '{print $1}')
+        echo "The subdomain $sub_domain is a $record_type record and points to $destination"
+    fi
+}
+
+# Main script
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 domain [subdomain]"
+    exit 1
+fi
+
+domain=$1
+
+if [ $# -eq 1 ]; then
+    sub_domains=("www" "lb-01" "web-01" "web-02")
+else
+    sub_domains=("$2")
+fi
+
+for sub_domain in "${sub_domains[@]}"; do
+    get_dns_info $sub_domain $domain
+done
