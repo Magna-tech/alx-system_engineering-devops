@@ -1,0 +1,4 @@
+sudo apt install apache2
+sudo ufw allow "Apache Full"
+sudo ufw allow "OpenSSH"
+sudo ufw enable
