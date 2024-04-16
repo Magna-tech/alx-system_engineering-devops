@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 #makes nginx run as the nginx user
-
-#Check if nginx exists
-if ! command -v nginx &> /dev/null
-then
-    apt-get update
-    apt-get install nginx -y
-fi
-
 # Check if nginx user exists, create it if it does not
 if ! id -u nginx &> /dev/null
 then
@@ -16,8 +8,6 @@ fi
 
 # Modify nginx configuration to run as nginx user and listen on port 8080
 sed -i 's/^user .*;/user nginx;/g' /etc/nginx/nginx.conf
-sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/sites-available/default
 
 # Restart nginx to apply changes
 nginx -s reload
-
