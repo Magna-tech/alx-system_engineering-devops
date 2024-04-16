@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 #makes nginx run as the nginx user
+
+#Check if nginx exists
+if ! command -v nginx &> /dev/null
+then
+    apt-get update
+    apt-get install nginx -y
+fi
+
 # Check if nginx user exists, create it if it does not
 if ! id -u nginx &> /dev/null
 then
