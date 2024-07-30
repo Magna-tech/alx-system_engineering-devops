@@ -32,7 +32,6 @@ def export_to_json(all_employees_data):
     try:
         with open(filename, 'w') as file:
             json.dump(all_employees_data, file, indent=4)
-            print(f'Data exported to {filename}')
     except IOError as e:
         print(f'Error writing to file {filename}: {e}')
 
