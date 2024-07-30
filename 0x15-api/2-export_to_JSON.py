@@ -6,8 +6,8 @@ Added functionality to export data in JSON format
 """
 
 
-import requests
 import json
+import requests
 import sys
 
 
