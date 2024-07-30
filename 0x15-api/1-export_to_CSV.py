@@ -16,7 +16,7 @@ def fetch_employee_name(employee_id):
     response = requests.get(
             f'https://jsonplaceholder.typicode.com/users/{employee_id}')
     response.raise_for_status()
-    return response.json().get('name')
+    return response.json()
 
 
 def fetch_todos(employee_id):
@@ -44,17 +44,19 @@ def export_to_csv(employee_id, username, todos):
 
 def main(employee_id):
     """Print TODO list progress for the given employee ID."""
-    name = fetch_employee_name(employee_id)
+    employee = fetch_employee_name(employee_id)
+    username = employee.get('username')
     todos = fetch_todos(employee_id)
     completed_tasks = [todo['title'] for todo in todos if todo['completed']]
     total_tasks = len(todos)
     done_tasks = len(completed_tasks)
 
-    print(f'Employee {name} is done with tasks({done_tasks}/{total_tasks}):')
+    print
+    (f'Employee {username} is done with tasks({done_tasks}/{total_tasks}):')
     for task in completed_tasks:
         print(f'\t {task}')
 
-    export_to_csv(employee_id, name, todos)
+    export_to_csv(employee_id, username, todos)
 
 
 if __name__ == "__main__":
